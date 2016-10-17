@@ -1,0 +1,7 @@
+Bundle-Name: Le service listener by frigo
+Bundle-Description: A bundle that displays messages at startup and when service events occur
+Bundle-Vendor: Frigo
+Bundle-Version: 1.0.0
+Bundle-Activator: hu.frigo.servicelistener.FrigoActivator
+Import-Package: org.osgi.framework
+
