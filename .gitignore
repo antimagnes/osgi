@@ -20,3 +20,5 @@ ObjectStore
 log
 PutObjectStoreDirHere
 asfHistory.dat
+.gradle
+build

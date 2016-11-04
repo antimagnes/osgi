@@ -8,7 +8,6 @@
     <packaging>jar</packaging>
 
     <name>UberProject</name>
-    <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,13 +23,7 @@
         <dependency>
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.main</artifactId>
-            <version>5.6.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.gogo.shell</artifactId>
-            <version>1.0.0</version>
-            <scope>runtime</scope>
+            <version>5.6.1</version>
         </dependency>
     </dependencies>
 

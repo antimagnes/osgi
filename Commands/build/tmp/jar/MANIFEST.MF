@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Export-Package: hu.frigo.gogo.shell.commands;version="1.0.0";uses:="or
+ g.osgi.framework"
+Bundle-SymbolicName: hu.frigo.gogo.shell.Commands
+Bundle-Version: 1.0.0
+Bundle-Name: Commands
+Bundle-ManifestVersion: 2
+Bnd-LastModified: 1478187357000
+Bundle-Activator: hu.frigo.gogo.shell.commands.Activator
+Import-Package: org.apache.felix.service.command;version="[1.0,2)",org
+ .osgi.framework;version="[1.6,2)",org.osgi.framework.startlevel;versi
+ on="[1.0,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Created-By: 1.8.0_77 (Oracle Corporation)
+Tool: Bnd-3.2.0.201605172007
+

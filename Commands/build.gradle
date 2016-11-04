@@ -1,0 +1,49 @@
+group 'hu.frigo.gogo.shell'
+version '1.0.0'
+
+apply plugin: 'java'
+apply plugin: 'osgi'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    maven {
+        url 'http://tas-mvn.rss.d3s.at.thales/nexus/content/groups/public-snapshots'
+    }
+}
+
+jar {
+    manifest {
+        instruction 'Bundle-Activator', 'hu.frigo.gogo.shell.commands.Activator'
+    }
+}
+
+dependencies {
+    compile 'org.osgi:org.osgi.core:4.3.1'
+    compile 'org.apache.felix:org.apache.felix.gogo.runtime:1.0.0'
+}
+
+task copyJar(type: Copy) {
+    from jar
+    into '/home/frigo/omc/osgi/ideaproject/UberProject/bundle'
+}
+
+task genXsd(type: Exec) {
+    workingDir '/home/frigo'
+    executable 'ls'
+    args ['-l']
+
+    ByteArrayOutputStream oi = new ByteArrayOutputStream()
+    standardOutput = oi
+
+    ext.output = {
+        return oi.toString()
+    }
+
+    print "VALAMI \"${genXsd.output()}\""
+}
+
+task majom(dependsOn: genXsd) {
+    print(">>> Namost ${genXsd.output()} <<<")
+}

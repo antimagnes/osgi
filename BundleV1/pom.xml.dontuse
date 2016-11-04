@@ -25,11 +25,11 @@
             <artifactId>org.osgi.core</artifactId>
             <version>4.2.0</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-core</artifactId>
             <version>2.12.3</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>
@@ -37,9 +37,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -48,10 +49,11 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Export-package>hu.frigo.bundle.v1.api</Export-package>
-                        <Private-package>hu.frigo.bundle.v1.impl</Private-package>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Bundle-Activator>hu.frigo.bundle.v1.impl.Activator</Bundle-Activator>
+                        <Bundle-Version>${project.version}</Bundle-Version>
+                        <Bundle-Description>${project.description}</Bundle-Description>
+                        <Bundle-Activator>hu.frigo.bundle.osgi.Activator</Bundle-Activator>
+                        <Export-Package/>
                     </instructions>
                 </configuration>
             </plugin>

@@ -1,0 +1,28 @@
+apply plugin: 'java'
+apply plugin: 'osgi'
+
+group='hu.frigo'
+version='1.0.0'
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    mavenLocal()
+}
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    compile 'hu.frigo:UberProject:1.0-SNAPSHOT'
+    compile 'org.osgi:org.osgi.core:4.2.0'
+}
+
+jar {
+    manifest {
+        instruction 'Bundle-Activator', 'hu.frigo.bundle.osgi.Activator'
+        instruction 'Export-Package', ''
+    }
+}
+
+task copyJar(type: Copy) {
+    from jar
+    into '/home/frigo/omc/osgi/ideaproject/UberProject/bundle'
+}
